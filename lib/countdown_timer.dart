@@ -110,7 +110,8 @@ class ListOfTimers extends StatelessWidget {
                         ),
                       ),
               style: ElevatedButton.styleFrom(
-                primary: state.getColor(state.timers.keys.toList()[index]),
+                backgroundColor:
+                    state.getColor(state.timers.keys.toList()[index]),
               ),
               child: CountdownTimer(
                 id: state.timers.keys.toList()[index],
