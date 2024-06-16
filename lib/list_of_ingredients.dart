@@ -35,7 +35,7 @@ class StateOfIngredients with ChangeNotifier {
 }
 
 class ListOfIngredients extends StatefulWidget {
-  const ListOfIngredients({Key? key}) : super(key: key);
+  const ListOfIngredients({super.key});
 
   @override
   State<ListOfIngredients> createState() => _ListOfIngredientsState();

@@ -66,7 +66,7 @@ class StateOfTimers with ChangeNotifier {
 
 class CountdownTimer extends StatelessWidget {
   final String id;
-  const CountdownTimer({Key? key, required this.id}) : super(key: key);
+  const CountdownTimer({super.key, required this.id});
 
   @override
   Widget build(BuildContext context) {
@@ -85,7 +85,7 @@ class CountdownTimer extends StatelessWidget {
 class ListOfTimers extends StatelessWidget {
   final String? recipeId;
 
-  const ListOfTimers({Key? key, this.recipeId}) : super(key: key);
+  const ListOfTimers({super.key, this.recipeId});
 
   @override
   Widget build(BuildContext context) {

@@ -10,8 +10,7 @@ import 'theme_manager.dart';
 class AddOrEditRecipePage extends StatefulWidget {
   final String type;
   Recipe? recipe;
-  AddOrEditRecipePage({Key? key, required this.type, this.recipe})
-      : super(key: key);
+  AddOrEditRecipePage({super.key, required this.type, this.recipe});
 
   @override
   State<AddOrEditRecipePage> createState() => _AddOrEditRecipePageState();
@@ -270,10 +269,11 @@ class _AddOrEditRecipePageState extends State<AddOrEditRecipePage> {
                   content: TextFormField(
                     initialValue: _ingredients[index - 6],
                     onFieldSubmitted: (String value) {
-                      setState(() => {
-                            if (value.isNotEmpty)
-                              {_ingredients[index - 6] = value}
-                          });
+                      setState(() {
+                        if (value.isNotEmpty) {
+                          _ingredients[index - 6] = value;
+                        }
+                      });
                       Navigator.pop(context);
                     },
                   ),
@@ -288,9 +288,11 @@ class _AddOrEditRecipePageState extends State<AddOrEditRecipePage> {
                   hintText: 'Wpisz składnik',
                 ),
                 onSubmitted: (String value) => {
-                  setState(() => {
-                        if (value.isNotEmpty) {_ingredients.add(value)}
-                      })
+                  setState(() {
+                    if (value.isNotEmpty) {
+                      _ingredients.add(value);
+                    }
+                  })
                 },
               ),
             );
@@ -330,9 +332,11 @@ class _AddOrEditRecipePageState extends State<AddOrEditRecipePage> {
                   content: TextFormField(
                     initialValue: _steps[index - 8 - _ingredients.length],
                     onFieldSubmitted: (String value) {
-                      setState(() => {
-                            if (value.isNotEmpty) {_steps[index - 6] = value}
-                          });
+                      setState(() {
+                        if (value.isNotEmpty) {
+                          _steps[index - 6] = value;
+                        }
+                      });
                       Navigator.pop(context);
                     },
                   ),

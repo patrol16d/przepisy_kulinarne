@@ -9,7 +9,7 @@ import 'countdown_timer.dart';
 import 'theme_manager.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -286,11 +286,11 @@ class _HomePageState extends State<HomePage>
       ),
       floatingActionButton: FloatingActionButton(
           onPressed: () {
-            setState(() => {
-                  Provider.of<StateOfIngredients>(context, listen: false)
-                      .removeAll(),
-                  _bottomIndex = 0,
-                });
+            setState(() {
+              Provider.of<StateOfIngredients>(context, listen: false)
+                  .removeAll();
+              _bottomIndex = 0;
+            });
           },
           backgroundColor: Colors.red,
           child: const Icon(Icons.delete)),
