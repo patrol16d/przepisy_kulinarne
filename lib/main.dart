@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:przepisy_kulinarne/theme_manager.dart';
+import 'firebase_options.dart';
 import 'list_of_ingredients.dart';
 import 'countdown_timer.dart';
 import 'home_page.dart';
@@ -11,7 +12,9 @@ Map<String, dynamic> timers = {};
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   await AwesomeNotifications().initialize(
     null,
     [

@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
 import 'package:firebase_core/firebase_core.dart' as firebase_core;
 import 'package:cloud_firestore/cloud_firestore.dart' as cloud_firestore;
+import 'package:flutter/material.dart';
 
 import 'recipe.dart';
 
@@ -14,8 +15,7 @@ class Storage {
     try {
       storage.ref('images/$fileName').putFile(file);
     } on firebase_core.FirebaseException catch (e) {
-      // ignore: avoid_print
-      print(e.message);
+      debugPrint(e.message);
     }
   }
 
@@ -23,8 +23,7 @@ class Storage {
     try {
       storage.ref('images/$fileName').delete();
     } on firebase_core.FirebaseException catch (e) {
-      // ignore: avoid_print
-      print(e.message);
+      debugPrint(e.message);
     }
   }
 
@@ -48,8 +47,7 @@ class Cloud {
     try {
       cloud.collection(type).add(recipe.toJson());
     } on firebase_core.FirebaseException catch (e) {
-      // ignore: avoid_print
-      print(e.message);
+      debugPrint(e.message);
     }
   }
 
@@ -57,8 +55,7 @@ class Cloud {
     try {
       cloud.collection(type).doc(id).delete();
     } on firebase_core.FirebaseException catch (e) {
-      // ignore: avoid_print
-      print(e.message);
+      debugPrint(e.message);
     }
   }
 

@@ -32,8 +32,9 @@ class Recipe {
   static Recipe fromJson(Map<String, dynamic> jsonFile, String id) => Recipe(
         id: id,
         title: jsonFile.containsKey('title') ? jsonFile['title'] : '',
-        images:
-            jsonFile.containsKey('images') ? jsonFile['images'].identity() : [],
+        images: jsonFile.containsKey('images')
+            ? jsonFile['images'].cast<String>()
+            : [],
         description:
             jsonFile.containsKey('description') ? jsonFile['description'] : '',
         ingredients: jsonFile.containsKey('ingredients')
